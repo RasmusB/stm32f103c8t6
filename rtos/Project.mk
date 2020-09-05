@@ -5,7 +5,7 @@
 
 # Edit this variable if your release differs from what is shown here:
 
-FREERTOS	?= FreeRTOSv10.0.1
+FREERTOS	?= FreeRTOS-Kernel
 
 ######################################################################
 #  Internal variables
@@ -68,7 +68,7 @@ rsrc:
 		echo "Then try again." ; \
 		echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
 		exit 2; \
-	fi 
+	fi
 	@if [ ! -d "$(FREERTOSDIR)/FreeRTOS" ] ; then \
 		echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" ; \
 		echo "FreeRTOS is improperly unzipped. There should be a" ; \
@@ -123,7 +123,7 @@ group4:
 license:
 	cp $(FREERTOSDIR)/FreeRTOS/License/license.txt $(PROJRTOS)/LICENSE
 
-# We don't use stm32f10x_lib.h because libopencm3 provides our device driver 
+# We don't use stm32f10x_lib.h because libopencm3 provides our device driver
 # facilities. So we comment that line out of FreeRTOSConfig.h
 #
 $(PROJECT)/FreeRTOSConfig.h:
